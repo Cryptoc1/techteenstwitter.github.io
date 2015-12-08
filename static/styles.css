@@ -1,0 +1,151 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    font-family: 'Open Sans';
+    font-size: 1.08em;
+    font-weight: 400;
+    background-color: #E0E0E0;
+    color: rgba(28, 28, 28, .98);
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(28, 28, 28, 0.004);
+}
+
+a {
+    text-decoration: none;
+    color: #448AFF;
+}
+
+.header {
+    width: 100%;
+    height: 40%;
+    font-family: 'Chivo';
+    font-size: 23pt;
+    font-weight: 700;
+    color: rgba(252, 252, 252, .98);
+    background-color: #2196F3;
+    text-align: center;
+    box-shadow: 0 3px 12px 0px #BDBDBD;
+}
+
+.header #title {
+    letter-spacing: 10pt;
+    font-size: 125pt;
+    padding-top: 3%;
+}
+
+.content {
+    width: 70%;
+    margin: 0 auto;
+    padding: 2.5%;
+}
+
+#members-list {}
+
+.member-card {
+    background-color: #FAFAFA !important;
+    border-radius: 3px;
+    box-shadow: 0 3px 12px 0px #BDBDBD;
+    margin: 2%;
+}
+
+.member-side {
+    display: inline-block;
+}
+
+.member-left {
+    max-height: 300px;
+    width: 25%;
+    overflow: hidden;
+}
+
+.member-portrait {
+    height: 100%;
+    width: auto;
+    margin-left: -50%;
+}
+
+.member-right {
+    padding-left: 3%;
+    padding-bottom: 2%;
+    overflow: hidden;
+}
+
+.member-right .member-item::before {
+    font-weight: 700;
+    display: block;
+    margin-top: 8px;
+}
+
+.member-name {
+    font-weight: 700;
+    font-size: 20pt;
+}
+
+.member-skills::before {
+    content: "Skills";
+}
+
+.member-skills {}
+
+.member-interests::before {
+    content: "Interests";
+}
+
+.member-interests {}
+
+.member-projects::before {
+    content: "Projects";
+}
+
+.member-projects {}
+
+.member-projects a {}
+
+.member-links {
+    margin-top: 1%;
+}
+
+.member-links a {
+    font-size: 22pt;
+    margin: 5px;
+}
+
+@media screen and (max-width: 750px) {
+    .header {
+        height: 50%;
+    }
+    .content {
+        width: 95%;
+    }
+    .member-card {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .member-left {
+        width: 100%;
+    }
+    .member-portrait {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 750px) and (orientation: landscape) {
+    .header {
+        height: 80%;
+    }
+    .content {
+        width: 95%;
+    }
+    .member-card {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .member-left {
+        height: 350px;
+        width: 25%;
+    }
+}

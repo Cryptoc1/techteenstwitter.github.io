@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TTT</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="static/styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--    <meta name="theme-color" content="#F44336">-->
+</head>
+
+<body>
+    <div class="header">
+        <div id="title">TTT</div>
+        <div>Tech Teens Twitter</div>
+    </div>
+    <div class="content">
+        <div id="members-list">
+            <!--<div class="member-card">
+                <div class="member-side member-left">
+                    <img class="member-portrait" src="static/portraits/sam.jpg">
+                </div>
+                <div class="member-side member-right">
+                    <div class="member-name">Samuel Steele</div>
+                    <div class="member-skills member-item">HTML, CSS, JavaScript</div>
+                    <div class="member-interests member-item">Computers and Software, Movies, Video games</div>
+                    <div class="member-projects member-item">
+                        <a href="#">Zipf</a>,
+                        <a href="#">Maybe</a>,
+                        <a href="#">hiroshima</a>
+                    </div>
+                    <div class="member-links member-item">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-github"></i></a>
+                      <a href=""></a>
+        </div>
+    </div>
+    </div>-->
+        </div>
+    </div>
+</body>
+<script src="static/members.js"></script>
+<script>
+    window.onload = function () {
+        for (i in Members) {
+            document.getElementById('members-list').appendChild(member(Members[i]));
+        }
+    }
+
+    // Returns a member-card DOM object, ready for appending
+    function member(obj) {
+        var card = document.createElement('div');
+        card.className = 'member-card';
+        var left = document.createElement('div');
+        left.className = 'member-side member-left';
+        left.innerHTML = '<img class="member-portrait" src="' + obj.portrait + '">';
+        var right = document.createElement('div');
+        right.className = 'member-side member-right';
+        right.innerHTML = '';
+        right.innerHTML += '<div class="member-name">' + obj.name + '</div>';
+        var skills = document.createElement('div');
+        skills.className = 'member-skills member-item';
+        skills.innerHTML = '';
+        for (j in obj.skills) {
+            if (j < obj.skills.length)
+                skills.innerHTML += obj.skills[j] + ', ';
+            else
+                skills.innerHTML += obj.skills[j]
+        }
+        right.appendChild(skills);
+        var interests = document.createElement('div');
+        interests.className = 'member-interests member-item';
+        interests.innerHTML = '';
+        for (j in obj.interests) {
+            if (j < obj.interests.length - 1)
+                interests.innerHTML += obj.interests[j] + ', ';
+            else
+                interests.innerHTML += obj.interests[j];
+        }
+        right.appendChild(interests);
+        var projects = document.createElement('div');
+        projects.className = 'member-projects member-item';
+        projects.innerHTML = '';
+        for (j in obj.projects) {
+            if (j < obj.projects.length - 1)
+                projects.innerHTML += '<a href="' + obj.projects[j].url + '">' + obj.projects[j].title + '</a>, ';
+            else
+                projects.innerHTML += '<a href="' + obj.projects[j].url + '">' + obj.projects[j].title + '</a>';
+        }
+        right.appendChild(projects);
+        var links = document.createElement('div');
+        links.className = 'member-links member-item';
+        links.innerHTML = '';
+        for (j in obj.links) {
+            if (j == 'web')
+                links.innerHTML += '<a href="' + obj.links[j] + '"><i class="fa fa-globe"></i></a>';
+            else
+                links.innerHTML += '<a href="' + obj.links[j] + '"><i class="fa fa-' + j + '"></i></a>';
+        }
+        right.appendChild(links);
+        card.appendChild(left);
+        card.appendChild(right);
+
+        return card;
+    }
+</script>
+
+</html>
